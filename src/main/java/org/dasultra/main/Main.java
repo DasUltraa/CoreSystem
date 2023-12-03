@@ -1,10 +1,12 @@
 package org.dasultra.main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.commands.admin.CommandGamemode;
 import org.dasultra.commands.admin.CommandInventory;
+import org.dasultra.commands.admin.CommandTime;
 import org.dasultra.commands.player.CommandEnderchest;
 import org.dasultra.commands.player.CommandFeed;
 import org.dasultra.commands.player.CommandFly;
@@ -31,6 +33,7 @@ public final class Main extends JavaPlugin {
         getCommand("fly").setExecutor(new CommandFly());
         getCommand("invsee").setExecutor(new CommandInventory());
         getCommand("enderchest").setExecutor(new CommandEnderchest());
+        getCommand("time").setExecutor(new CommandTime());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
