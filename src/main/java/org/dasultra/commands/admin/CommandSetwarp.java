@@ -31,7 +31,7 @@ public class CommandSetwarp implements CommandExecutor, TabCompleter {
                     String data = args[0];
                     Warp warp = new Warp(data);
                     warp.setWarp(p.getLocation());
-                    p.sendMessage(getMessage("Commands.Warp.Set"));
+                    p.sendMessage(getMessage("Commands.Warp.Set").replaceAll("%loc%", args[0]));
                 }
             } else {
                 p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());

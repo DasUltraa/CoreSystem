@@ -1,25 +1,26 @@
-package org.dasultra.commands.player;
+package org.dasultra.commands.admin;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.api.team.Warp;
 import org.dasultra.api.messages.Messages;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.dasultra.api.messages.Messages.getMessage;
 
-public class CommandWarp implements CommandExecutor, TabCompleter {
+public class CommandDelwarp implements CommandExecutor, TabCompleter {
+
 
     List<String> complete = new ArrayList<>();
-
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
         List<String> result = new ArrayList<>();
@@ -43,22 +44,21 @@ public class CommandWarp implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player p) {
-            if (args.length == 1) {
-                String data = args[0];
-                Warp warp = new Warp(data);
-                if (warp.existWarp()) {
-                    if (warp.getLocation().getWorld() == null) {
-                        p.sendMessage("test");
+            if (p.hasPermission("core.delwarp")) {
+                if (args.length == 1) {
+                    String data = args[0];
+                    Warp warp = new Warp(data);
+                    if (warp.existWarp()) {
+                        p.sendMessage(getMessage("Commands.Warp.Delete").replaceAll("%loc%", args[0]));
+                        warp.delWarp();
+                    } else {
+                        p.sendMessage(getMessage("Commands.Warp.DoesNotExist"));
                     }
-                    warp.teleport(p);
-                    p.sendMessage(getMessage("Commands.Warp.Teleported").replaceAll("%loc%", args[0]));
-                } else {
-                    p.sendMessage(getMessage("Commands.Warp.DoesNotExist"));
                 }
             } else {
                 p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());
             }
-
-        }  return false;
+        }
+        return false;
     }
 }

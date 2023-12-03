@@ -41,6 +41,7 @@ public class Messages {
         addMessage("Commands.Warp.Teleported", "%prefix% &aYou have been teleported to &e%loc%&a.");
         addMessage("Commands.Warp.Set", "%prefix% &aYou have successfully created the warp &e%loc%.");
         addMessage("Commands.Warp.DoesNotExist", "%prefix% &cThis warp does not exist!");
+        addMessage("Commands.Warp.Delete", "%prefix% &aYou have successfully deleted the warp &e%loc%&a.");
     }
 
     public static String getMessage(String path) {

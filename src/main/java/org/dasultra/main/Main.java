@@ -34,10 +34,12 @@ public final class Main extends JavaPlugin {
         getCommand("setspawn").setExecutor(new CommandSetSpawn());
         getCommand("warp").setExecutor(new CommandWarp());
         getCommand("setwarp").setExecutor(new CommandSetwarp());
+        getCommand("delwarp").setExecutor(new CommandDelwarp());
 
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
+        getCommand("delwarp").setTabCompleter(new CommandDelwarp());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
