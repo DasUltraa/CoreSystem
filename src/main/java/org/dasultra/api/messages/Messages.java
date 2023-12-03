@@ -36,6 +36,11 @@ public class Messages {
         addMessage("Commands.Enderchest.Other", "%prefix% &aYou opened &e%player%'s &aenderchest");
         addMessage("Commands.Time.Time", "%prefix% &aYou have set the time to &e%time%&a.");
         addMessage("Commands.Time.Usage", "%prefix% &cUse /time day/night");
+        addMessage("Commands.Spawn", "%prefix% &aYou have been teleported to the Spawn.");
+        addMessage("Commands.Setspawn", "%prefix% &aYou have successfully set the Spawnlocation.");
+        addMessage("Commands.Warp.Teleported", "%prefix% &aYou have been teleported to &e%loc%&a.");
+        addMessage("Commands.Warp.Set", "%prefix% &aYou have successfully created the warp &e%loc%.");
+        addMessage("Commands.Warp.DoesNotExist", "%prefix% &cThis warp does not exist!");
     }
 
     public static String getMessage(String path) {

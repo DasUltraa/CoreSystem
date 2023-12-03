@@ -4,12 +4,15 @@ import org.bukkit.Bukkit;
 import org.dasultra.api.File.FileManager;
 import org.dasultra.api.messages.Messages;
 
+import java.io.File;
+import java.io.ObjectInputStream;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
 
 public class ServerAPI {
 
     private static final LinkedList<String> allow = new LinkedList<>();
+    protected static final LinkedList<String> warps = new LinkedList<>();
 
     public static boolean getMethodes(String meth) {
         FileManager manager = new FileManager("plugins/CoreSystem/Methodes.yml");
@@ -49,5 +52,24 @@ public class ServerAPI {
     public void initMethodes() {
         FileManager manager = new FileManager("plugins/CoreSystem/Methodes.yml");
         manager.add("MessageAPI", true);
+    }
+
+    public static void reloadWarps() {
+        warps.clear();
+        initWarp();
+    }
+
+    public static LinkedList<String> getWarps() {
+        return warps;
+    }
+
+    public static void initWarp() {
+        File file = new File("plugins/CoreSystem/warp/");
+        File[] files = file.listFiles();
+        if (files != null) {
+            for (File object : files) {
+                warps.add(object.getName().replace(".yml", ""));
+            }
+        }
     }
 }
