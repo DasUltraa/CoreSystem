@@ -10,6 +10,14 @@ commands:
   gamemode:
     aliases:
       - gm
-    description: Gamemode
   feed:
-      description: Feed
+  heal:
+  fly:
+  invsee:
+    aliases:
+      - inv
+      - inventory
+  enderchest:
+    aliases:
+      - ec
+      - echest
