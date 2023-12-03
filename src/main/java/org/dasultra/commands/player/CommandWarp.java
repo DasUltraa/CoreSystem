@@ -6,10 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.api.team.Warp;
-import org.dasultra.api.messages.Messages;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +53,6 @@ public class CommandWarp implements CommandExecutor, TabCompleter {
                 } else {
                     p.sendMessage(getMessage("Commands.Warp.DoesNotExist"));
                 }
-            } else {
-                p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());
             }
 
         }  return false;

@@ -1,7 +1,6 @@
 package org.dasultra.commands.admin;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Server;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,9 +8,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.api.team.Warp;
-import org.dasultra.api.messages.Messages;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class CommandDelwarp implements CommandExecutor, TabCompleter {
             if (args.length == 1) {
                 for (String a : complete) {
                     if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                        result.add(a);
+                        result.remove(a);
                     }
                 }
                 return result;
