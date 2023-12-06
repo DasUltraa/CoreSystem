@@ -1,7 +1,10 @@
 package org.dasultra.api;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 import org.dasultra.api.File.FileManager;
+import org.dasultra.api.builder.ItemBuilder;
 import org.dasultra.api.messages.Messages;
 
 import java.io.File;
@@ -47,6 +50,10 @@ public class ServerAPI {
 
         Messages.initMessages();
         initMethodes();
+    }
+
+    public static ItemStack getSkull(String name) {
+        return new ItemBuilder(Material.PLAYER_HEAD).setDisplayName("§7Head of §b" + name).setOwningSkull(name).build();
     }
 
     public void initMethodes() {

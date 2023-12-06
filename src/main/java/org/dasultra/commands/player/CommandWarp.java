@@ -46,7 +46,7 @@ public class CommandWarp implements CommandExecutor, TabCompleter {
                 Warp warp = new Warp(data);
                 if (warp.existWarp()) {
                     if (warp.getLocation().getWorld() == null) {
-                        p.sendMessage("test");
+                        p.sendMessage();
                     }
                     warp.teleport(p);
                     p.sendMessage(getMessage("Commands.Warp.Teleported").replaceAll("%loc%", args[0]));

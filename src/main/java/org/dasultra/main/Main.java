@@ -7,6 +7,7 @@ import org.dasultra.api.ServerAPI;
 import org.dasultra.commands.admin.*;
 import org.dasultra.commands.admin.CommandSpawn;
 import org.dasultra.commands.player.*;
+import org.dasultra.listener.ChatBlocker;
 import org.dasultra.listener.JoinListener;
 import org.dasultra.listener.QuitListener;
 
@@ -35,14 +36,17 @@ public final class Main extends JavaPlugin {
         getCommand("warp").setExecutor(new CommandWarp());
         getCommand("setwarp").setExecutor(new CommandSetwarp());
         getCommand("delwarp").setExecutor(new CommandDelwarp());
+        getCommand("head").setExecutor(new CommandHead());
 
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
         getCommand("delwarp").setTabCompleter(new CommandDelwarp());
+        getCommand("head").setTabCompleter(new CommandHead());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ChatBlocker(), this);
     }
 
     @Override

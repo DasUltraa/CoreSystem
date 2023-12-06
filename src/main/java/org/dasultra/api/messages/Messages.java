@@ -42,6 +42,8 @@ public class Messages {
         addMessage("Commands.Warp.Set", "%prefix% &aYou have successfully created the warp &e%loc%.");
         addMessage("Commands.Warp.DoesNotExist", "%prefix% &cThis warp does not exist!");
         addMessage("Commands.Warp.Delete", "%prefix% &aYou have successfully deleted the warp &e%loc%&a.");
+        addMessage("Commands.Skull.Skull", "%prefix% &aYou got &e%player% &aHead.");
+        addMessage("Commands.Skull.Usage", "%prefix% &cUse /head <player>!");
     }
 
     public static String getMessage(String path) {

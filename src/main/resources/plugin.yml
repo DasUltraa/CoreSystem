@@ -27,3 +27,6 @@ commands:
   warp:
   setwarp:
   delwarp:
+  head:
+    aliases:
+      - skull
