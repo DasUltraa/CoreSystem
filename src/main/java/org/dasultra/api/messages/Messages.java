@@ -44,6 +44,8 @@ public class Messages {
         addMessage("Commands.Warp.Delete", "%prefix% &aYou have successfully deleted the warp &e%loc%&a.");
         addMessage("Commands.Skull.Skull", "%prefix% &aYou got &e%player% &aHead.");
         addMessage("Commands.Skull.Usage", "%prefix% &cUse /head <player>!");
+        addMessage("Commands.Clear.Clear", "%prefix% &aYou cleared &e%player%'s &ainventory");
+        addMessage("Commands.Clear.Usage", "%prefix% &cUse /clear <player>!");
     }
 
     public static String getMessage(String path) {

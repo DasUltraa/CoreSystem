@@ -30,3 +30,4 @@ commands:
   head:
     aliases:
       - skull
+  clear:

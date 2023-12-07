@@ -37,12 +37,14 @@ public final class Main extends JavaPlugin {
         getCommand("setwarp").setExecutor(new CommandSetwarp());
         getCommand("delwarp").setExecutor(new CommandDelwarp());
         getCommand("head").setExecutor(new CommandHead());
+        getCommand("clear").setExecutor(new CommandClear());
 
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
         getCommand("delwarp").setTabCompleter(new CommandDelwarp());
         getCommand("head").setTabCompleter(new CommandHead());
+        getCommand("clear").setTabCompleter(new CommandClear());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
