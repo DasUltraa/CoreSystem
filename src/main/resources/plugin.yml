@@ -31,3 +31,7 @@ commands:
     aliases:
       - skull
   clear:
+  craft:
+    aliases:
+      - workbench
+      - wb

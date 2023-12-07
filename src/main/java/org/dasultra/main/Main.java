@@ -38,6 +38,7 @@ public final class Main extends JavaPlugin {
         getCommand("delwarp").setExecutor(new CommandDelwarp());
         getCommand("head").setExecutor(new CommandHead());
         getCommand("clear").setExecutor(new CommandClear());
+        getCommand("craft").setExecutor(new CommandCraft());
 
 
         getCommand("warp").setTabCompleter(new CommandWarp());
