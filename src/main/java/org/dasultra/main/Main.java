@@ -39,6 +39,7 @@ public final class Main extends JavaPlugin {
         getCommand("head").setExecutor(new CommandHead());
         getCommand("clear").setExecutor(new CommandClear());
         getCommand("craft").setExecutor(new CommandCraft());
+        getCommand("rename").setExecutor(new CommandRename());
 
 
         getCommand("warp").setTabCompleter(new CommandWarp());

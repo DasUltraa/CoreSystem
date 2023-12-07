@@ -35,3 +35,4 @@ commands:
     aliases:
       - workbench
       - wb
+  rename:
