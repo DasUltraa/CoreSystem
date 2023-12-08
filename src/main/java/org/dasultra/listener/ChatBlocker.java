@@ -15,7 +15,7 @@ public class ChatBlocker implements Listener {
     public void onPlayerChat(AsyncPlayerChatEvent event) {
         String message = event.getMessage();
         FileManager manager = new FileManager("plugins/CoreSystem/ChatBlocker.yml");
-        manager.add("blocked-words", 1);
+        manager.add("blocked-words", 0);
         List<String> blockedWords = manager.getStringList("blocked-words");
 
         for (String blockedWord : blockedWords) {
