@@ -28,7 +28,7 @@ public class CommandRename implements CommandExecutor {
                         msg.setLength(msg.length() - 1);
                         hand = new ItemBuilder(hand).setDisplayName(StringHelper.getColorCode(String.valueOf(msg))).build();
                         p.getInventory().setItemInMainHand(new ItemStack(hand));
-                        p.sendMessage(getMessage("Commands.Rename"));
+                        p.sendMessage(getMessage("Commands.Rename").replaceAll("%name%", args[0]));
                     }
                 } else {
                     p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());
