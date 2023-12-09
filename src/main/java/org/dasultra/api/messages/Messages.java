@@ -47,6 +47,7 @@ public class Messages {
         addMessage("Commands.Clear.Clear", "%prefix% &aYou cleared &e%player%'s &ainventory");
         addMessage("Commands.Clear.Usage", "%prefix% &cUse /clear <player>!");
         addMessage("Commands.Rename", "%prefix% &aYou item got renamed to %name%!");
+        addMessage("Commands.Workbench", "%prefix% &aYou opened your workbench");
     }
 
     public static String getMessage(String path) {
