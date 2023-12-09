@@ -13,7 +13,7 @@ public class CommandCraft implements CommandExecutor {
 
         if (sender instanceof Player p) {
             p.openWorkbench(null, true);
-            p.sendMessage(getMessage("Commands.Workbench"));
+            p.sendMessage(getMessage("Commands.Craft"));
         }
         return false;
     }
