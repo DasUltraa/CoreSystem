@@ -39,3 +39,6 @@ commands:
   teleport:
     aliases:
       - tp
+  teleporthere:
+    aliases:
+      - tphere
