@@ -40,6 +40,7 @@ public final class Main extends JavaPlugin {
         getCommand("clear").setExecutor(new CommandClear());
         getCommand("craft").setExecutor(new CommandCraft());
         getCommand("rename").setExecutor(new CommandRename());
+        getCommand("teleport").setExecutor(new CommandTeleport());
 
 
         getCommand("warp").setTabCompleter(new CommandWarp());
@@ -47,6 +48,8 @@ public final class Main extends JavaPlugin {
         getCommand("delwarp").setTabCompleter(new CommandDelwarp());
         getCommand("head").setTabCompleter(new CommandHead());
         getCommand("clear").setTabCompleter(new CommandClear());
+        getCommand("inventory").setTabCompleter(new CommandInventory());
+        getCommand("teleport").setTabCompleter(new CommandTeleport());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new QuitListener(), this);

@@ -36,3 +36,6 @@ commands:
       - workbench
       - wb
   rename:
+  teleport:
+    aliases:
+      - tp

@@ -48,6 +48,8 @@ public class Messages {
         addMessage("Commands.Clear.Usage", "%prefix% &cUse /clear <player>!");
         addMessage("Commands.Rename", "%prefix% &aYou renamed your item!");
         addMessage("Commands.Craft", "%prefix% &aYou opened your workbench");
+        addMessage("Commands.Teleport.Self", "%prefix% &aYou got teleported to &e%player%&a.");
+        addMessage("Commands.Teleport.Self", "%prefix% &aYou teleported &e%player%&a to &e5player2%&a.");
     }
 
     public static String getMessage(String path) {
