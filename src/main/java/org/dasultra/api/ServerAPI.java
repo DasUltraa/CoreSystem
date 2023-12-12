@@ -10,6 +10,8 @@ import org.dasultra.api.messages.Messages;
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 
 public class ServerAPI {
@@ -51,6 +53,13 @@ public class ServerAPI {
         Messages.initMessages();
         initMethodes();
     }
+
+    public static String getDate() {
+        Date currentDate = new Date();
+        SimpleDateFormat s = new SimpleDateFormat("dd.MM.yyyy");
+        return s.format(currentDate);
+    }
+
 
     public static ItemStack getSkull(String name) {
         return new ItemBuilder(Material.PLAYER_HEAD).setDisplayName("§7Head of §b" + name).setOwningSkull(name).build();

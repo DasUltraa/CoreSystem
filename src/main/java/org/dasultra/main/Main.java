@@ -42,7 +42,7 @@ public final class Main extends JavaPlugin {
         getCommand("rename").setExecutor(new CommandRename());
         getCommand("teleport").setExecutor(new CommandTeleport());
         getCommand("teleporthere").setExecutor(new CommandTeleportHere());
-
+        getCommand("sign").setExecutor(new CommandSign());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
