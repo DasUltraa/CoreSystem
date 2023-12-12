@@ -30,7 +30,7 @@ public class CommandTeleport implements CommandExecutor, TabCompleter {
                         Player t2 = Bukkit.getPlayer(args[1]);
 
                         t1.teleport(t2);
-                        p.sendMessage(getMessage("Commands.Teleport.Other").replaceAll("%player1", t1.getName()).replaceAll("%player2", t2.getName()));
+                        p.sendMessage(getMessage("Commands.Teleport.Other").replaceAll("%player1%", t1.getName()).replaceAll("%player2%", t2.getName()));
                     } else {
                         p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());
                     }

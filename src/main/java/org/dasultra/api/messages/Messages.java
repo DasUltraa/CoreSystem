@@ -49,8 +49,10 @@ public class Messages {
         addMessage("Commands.Rename", "%prefix% &aYou renamed your item!");
         addMessage("Commands.Craft", "%prefix% &aYou opened your workbench");
         addMessage("Commands.Teleport.Self", "%prefix% &aYou got teleported to &e%player%&a.");
-        addMessage("Commands.Teleport.Other", "%prefix% &aYou teleported &e%player%&a to &e5player2%&a.");
+        addMessage("Commands.Teleport.Other", "%prefix% &aYou teleported &e%player1%&a to &e%player2%&a.");
         addMessage("Commands.Teleport.Here", "%prefix% &e%player% &agot teleported to you.");
+        addMessage("Commands.Sign", "%prefix% &aYou have signed a item");
+        addMessage("Commands.Clearchat", "%prefix% &c The chat got cleared by &e%player%&c.");
     }
 
     public static String getMessage(String path) {

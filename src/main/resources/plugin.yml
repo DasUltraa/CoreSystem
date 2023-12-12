@@ -43,3 +43,6 @@ commands:
     aliases:
       - tphere
   sign:
+  clearchat:
+    aliases:
+      - cc
