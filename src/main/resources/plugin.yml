@@ -46,3 +46,5 @@ commands:
   clearchat:
     aliases:
       - cc
+  trash:
+  glow:

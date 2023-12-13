@@ -44,6 +44,8 @@ public final class Main extends JavaPlugin {
         getCommand("teleporthere").setExecutor(new CommandTeleportHere());
         getCommand("sign").setExecutor(new CommandSign());
         getCommand("clearchat").setExecutor(new CommandClearChat());
+        getCommand("trash").setExecutor(new CommandTrash());
+        getCommand("glow").setExecutor(new CommandGlow());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -53,6 +55,7 @@ public final class Main extends JavaPlugin {
         getCommand("inventory").setTabCompleter(new CommandInventory());
         getCommand("teleport").setTabCompleter(new CommandTeleport());
         getCommand("teleporthere").setTabCompleter(new CommandTeleportHere());
+        getCommand("glow").setTabCompleter(new CommandGlow());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
