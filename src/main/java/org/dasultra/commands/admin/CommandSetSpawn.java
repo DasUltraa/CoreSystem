@@ -1,13 +1,11 @@
 package org.dasultra.commands.admin;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.dasultra.api.File.FileManager;
+import org.dasultra.api.file.FileManager;
 import org.dasultra.api.ServerAPI;
 
 import java.util.Objects;
@@ -20,24 +18,24 @@ public class CommandSetSpawn implements CommandExecutor {
 
         if (sender instanceof Player p) {
             if (p.hasPermission("core.setspawn")) {
-                    FileManager data = new FileManager("plugins/CoreSystem/Spawn.yml");
+                FileManager data = new FileManager("plugins/CoreSystem/Spawn.yml");
 
-                    Location location = p.getLocation();
+                Location location = p.getLocation();
 
-                    double x = location.getX();
-                    double y = location.getY();
-                    double z = location.getZ();
-                    double yaw = location.getYaw();
-                    double pitch = location.getPitch();
-                    String world = Objects.requireNonNull(location.getWorld()).getName();
-                    data.set("x", x);
-                    data.set("y", y);
-                    data.set("z", z);
-                    data.set("yaw", yaw);
-                    data.set("pitch", pitch);
-                    data.set("world", world);
-                    data.save();
-                    p.sendMessage(getMessage("Commands.Setspawn"));
+                double x = location.getX();
+                double y = location.getY();
+                double z = location.getZ();
+                double yaw = location.getYaw();
+                double pitch = location.getPitch();
+                String world = Objects.requireNonNull(location.getWorld()).getName();
+                data.set("x", x);
+                data.set("y", y);
+                data.set("z", z);
+                data.set("yaw", yaw);
+                data.set("pitch", pitch);
+                data.set("world", world);
+                data.save();
+                p.sendMessage(getMessage("Commands.Setspawn"));
             } else {
                 p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());
             }

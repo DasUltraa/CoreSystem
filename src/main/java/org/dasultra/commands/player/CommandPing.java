@@ -14,7 +14,7 @@ import static org.dasultra.api.messages.Messages.getMessage;
 public class CommandPing implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player p){
+        if (sender instanceof Player p) {
             if (args.length == 0) {
                 int ping = getPing(p);
                 p.sendMessage(getMessage("Commands.Ping.Self").replaceAll("%ping%", String.valueOf(ping)));

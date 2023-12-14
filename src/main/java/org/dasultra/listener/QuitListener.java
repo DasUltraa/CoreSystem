@@ -13,6 +13,6 @@ public class QuitListener implements Listener {
     public void onQuit(PlayerQuitEvent e) {
 
         Player p = e.getPlayer();
-        e.setQuitMessage(getMessage("QuitMessage").replaceAll("%player%", String.valueOf(p.getName())));
+        e.setQuitMessage(getMessage("QuitMessage").replaceAll("%player%", p.getName()));
     }
 }

@@ -1,7 +1,7 @@
 package org.dasultra.api.messages;
 
 import org.bukkit.entity.Player;
-import org.dasultra.api.File.FileManager;
+import org.dasultra.api.file.FileManager;
 import org.dasultra.api.ServerAPI;
 
 import java.util.ArrayList;

@@ -6,7 +6,6 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
-import org.dasultra.api.builder.ItemBuilder;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ import java.util.Random;
 public class InventoryBuilder implements Cloneable {
 
     private final Inventory inventory;
-
 
 
     public InventoryBuilder(InventoryHolder holder, InventoryType type) {
@@ -120,7 +118,6 @@ public class InventoryBuilder implements Cloneable {
         }
         return this;
     }
-
 
 
     @Override

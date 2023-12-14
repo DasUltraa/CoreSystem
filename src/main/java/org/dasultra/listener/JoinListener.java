@@ -7,12 +7,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import static org.dasultra.api.messages.Messages.getMessage;
 
-public class  JoinListener implements Listener {
+public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
 
         Player p = e.getPlayer();
-        e.setJoinMessage(getMessage("JoinMessage").replaceAll("%player%", String.valueOf(p.getName())));
+        e.setJoinMessage(getMessage("JoinMessage").replaceAll("%player%", p.getName()));
     }
 }

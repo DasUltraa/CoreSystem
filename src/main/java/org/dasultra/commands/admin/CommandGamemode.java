@@ -97,6 +97,6 @@ public class CommandGamemode implements CommandExecutor {
                 p.sendMessage(getMessage("Commands.Gamemode.Usage"));
             }
         }
-            return false;
+        return false;
     }
 }
