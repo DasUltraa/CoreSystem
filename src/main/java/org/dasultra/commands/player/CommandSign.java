@@ -20,29 +20,29 @@ public class CommandSign implements CommandExecutor {
             if (p.hasPermission("core.sign")) {
                 StringBuilder builder = new StringBuilder();
                 if (p.hasPermission("core.sign.ignore")) {
-                        if (args.length > 1) {
-                            StringBuilder msg = new StringBuilder();
-                            for (String arg : args) {
-                                msg.append(arg).append(" ");
-                            }
-                            builder.append(msg.toString().replace("ignore ".toLowerCase(), ""));
-                            String replace = builder.toString().replace("ignore ".toLowerCase(), "");
-
-                            ItemStack hand = p.getInventory().getItemInMainHand();
-                            ItemMeta meta = hand.getItemMeta();
-
-                            List<String> data = new ArrayList<>();
-                            data.add("§a§l" + replace);
-                            data.add("");
-                            data.add("§6Signed on §4§l" + ServerAPI.getDate() + "§6!");
-                            data.add("");
-
-                            assert meta != null;
-                            meta.setLore(data);
-
-                            hand.setItemMeta(meta);
-                            data.clear();
+                    if (args.length > 1) {
+                        StringBuilder msg = new StringBuilder();
+                        for (String arg : args) {
+                            msg.append(arg).append(" ");
                         }
+                        builder.append(msg.toString().replace("ignore ".toLowerCase(), ""));
+                        String replace = builder.toString().replace("ignore ".toLowerCase(), "");
+
+                        ItemStack hand = p.getInventory().getItemInMainHand();
+                        ItemMeta meta = hand.getItemMeta();
+
+                        List<String> data = new ArrayList<>();
+                        data.add("§a§l" + replace);
+                        data.add("");
+                        data.add("§6Signed on §4§l" + ServerAPI.getDate() + "§6!");
+                        data.add("");
+
+                        assert meta != null;
+                        meta.setLore(data);
+
+                        hand.setItemMeta(meta);
+                        data.clear();
+                    }
                 } else {
                     p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());
                 }

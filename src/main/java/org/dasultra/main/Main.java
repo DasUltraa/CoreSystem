@@ -1,11 +1,9 @@
 package org.dasultra.main;
 
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.commands.admin.*;
-import org.dasultra.commands.admin.CommandSpawn;
 import org.dasultra.commands.player.*;
 import org.dasultra.listener.ChatBlocker;
 import org.dasultra.listener.JoinListener;
@@ -14,7 +12,8 @@ import org.dasultra.listener.QuitListener;
 public final class Main extends JavaPlugin {
 
 
-    public  static Main plugin;
+    public static Main plugin;
+
     @Override
     public void onEnable() {
 

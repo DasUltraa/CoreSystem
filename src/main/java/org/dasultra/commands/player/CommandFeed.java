@@ -27,10 +27,10 @@ public class CommandFeed implements CommandExecutor {
 
                 if (p.hasPermission("core.feed.other")) {
                     if (args[0].equalsIgnoreCase("all")) {
-                         Player a = (Player) Bukkit.getOnlinePlayers();
+                        Player a = (Player) Bukkit.getOnlinePlayers();
 
-                         a.setFoodLevel(20);
-                         a.sendMessage(getMessage("Commands.Feed.Self"));
+                        a.setFoodLevel(20);
+                        a.sendMessage(getMessage("Commands.Feed.Self"));
                     } else {
                         t.setFoodLevel(20);
                         t.sendMessage(getMessage("Commands.Feed.Self"));

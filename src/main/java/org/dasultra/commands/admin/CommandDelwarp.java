@@ -18,6 +18,7 @@ public class CommandDelwarp implements CommandExecutor, TabCompleter {
 
 
     List<String> complete = new ArrayList<>();
+
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
         List<String> result = new ArrayList<>();
