@@ -4,13 +4,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.commands.admin.*;
+import org.dasultra.commands.admin.CommandSpawn;
 import org.dasultra.commands.player.*;
 import org.dasultra.listener.ChatBlocker;
 import org.dasultra.listener.JoinListener;
 import org.dasultra.listener.QuitListener;
 
 public final class Main extends JavaPlugin {
-
 
     public static Main plugin;
 
@@ -58,13 +58,16 @@ public final class Main extends JavaPlugin {
         getCommand("glow").setTabCompleter(new CommandGlow());
         getCommand("ping").setExecutor(new CommandPing());
 
-        Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
-        Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
-        Bukkit.getPluginManager().registerEvents(new ChatBlocker(), this);
+        getServer().getPluginManager().registerEvents(new JoinListener(), this);
+        getServer().getPluginManager().registerEvents(new QuitListener(), this);
+        getServer().getPluginManager().registerEvents(new ChatBlocker(), this);
+
+        ServerAPI.initWarp();
     }
 
     @Override
     public void onDisable() {
         System.out.print("CoreSystem is shutting down");
     }
+
 }

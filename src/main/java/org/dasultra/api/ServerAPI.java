@@ -3,7 +3,7 @@ package org.dasultra.api;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import org.dasultra.api.File.FileManager;
+import org.dasultra.api.file.FileManager;
 import org.dasultra.api.builder.ItemBuilder;
 import org.dasultra.api.messages.Messages;
 

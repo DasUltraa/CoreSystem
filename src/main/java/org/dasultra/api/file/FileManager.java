@@ -1,4 +1,4 @@
-package org.dasultra.api.File;
+package org.dasultra.api.file;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
