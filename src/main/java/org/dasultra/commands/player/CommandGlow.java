@@ -1,5 +1,6 @@
 package org.dasultra.commands.player;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,6 +20,14 @@ public class CommandGlow implements CommandExecutor, TabCompleter {
             if (p.hasPermission("core.glow")) {
                 if (args.length == 0) {
                     p.setGlowing(!p.isGlowing());
+                } else if  (args.length == 1) {
+                    if (p.hasPermission("api.glow.target")) {
+                        Player t = Bukkit.getPlayer(args[0]);
+                        if (t == null) {
+                            p.sendMessage(getMessage("Commands.Glow.NotFound"));
+                        }
+                        t.setGlowing(!t.isGlowing());
+                    }
                 }
             } else {
                 p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());

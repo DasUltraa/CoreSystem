@@ -53,6 +53,9 @@ public class Messages {
         addMessage("Commands.Teleport.Here", "%prefix% &e%player% &agot teleported to you.");
         addMessage("Commands.Sign", "%prefix% &aYou have signed a item");
         addMessage("Commands.Clearchat", "%prefix% &c The chat got cleared by &e%player%&c.");
+        addMessage("Commands.Ping.Self", "%prefix% &aYour ping is &e%ping%ms&a.");
+        addMessage("Commands.Ping.Other", "%prefix% &e%player%'s &aPing is &e%ping%ms&a.");
+        addMessage("Commands.Glow.NotFound", "%prefix% &cThe target has not been found!");
     }
 
     public static String getMessage(String path) {
