@@ -1,5 +1,5 @@
 name: CoreSystem
-version: '${version}'
+version: '1.0'
 main: org.dasultra.main.Main
 api-version: '1.20'
 authors: [ DasUltra ]
@@ -54,3 +54,7 @@ commands:
   delhome:
     aliases:
       - deletehome
+  tpa:
+  tpahere:
+  tpaccept:
+  tpdeny:

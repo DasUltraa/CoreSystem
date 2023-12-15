@@ -64,6 +64,17 @@ public class Messages {
         addMessage("Commands.Delhome.Success", "%prefix% &aYou succesfully deleted the home &e%home%&a.");
         addMessage("Commands.Home.Teleport", "%prefix% &aYou have been teleported to the home &e%home%&a.");
         addMessage("Commands.Home.Homes", "%prefix% &aYour available homes: &e%homes%&a.");
+        addMessage("Commands.Tpa.NotPending", "%prefix% &cYou do not have a outgoing TPA request!");
+        addMessage("Commands.Tpa.Usage", "%prefix% &cUse /tpa <player>!");
+        addMessage("Commands.Tpa.Sent.Target", "%prefix% &e%player% &awants to teleport to you!");
+        addMessage("Commands.Tpa.Sent.Player", "%prefix% &aTeleport request sent!");
+        addMessage("Commands.Tpa.Accept.Sender", "%prefix% &e%player% &ahas accepted your TPA request.");
+        addMessage("Commands.Tpa.Accept.Player", "%prefix% &aYou have accepted the TPA request.");
+        addMessage("Commands.Tpa.Deny.Sender", "%prefix% &e%player% &chas denied your TPA request!");
+        addMessage("Commands.Tpa.Deny.Player", "%prefix% &cYou have denied the TPA request.");
+        addMessage("Commands.Tpahere.Usage", "%prefix% &cUse /tpahere <player>!");
+        addMessage("Commands.Tpahere.Sent.Target", "%prefix% &e%player% &awants you to teleport to him!");
+        addMessage("Commands.Tpahere.Sent.Player", "%prefix% &aTeleport request sent!");
     }
 
     public static String getMessage(String path) {

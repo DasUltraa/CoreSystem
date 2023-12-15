@@ -48,7 +48,11 @@ public final class Main extends JavaPlugin {
         getCommand("ping").setExecutor(new CommandPing());
         getCommand("sethome").setExecutor(new CommandSethome());
         getCommand("home").setExecutor(new CommandHome());
-        getCommand("delhome").setExecutor((new CommandDeletehome()));
+        getCommand("delhome").setExecutor(new CommandDeletehome());
+        getCommand("tpa").setExecutor(new CommandTPA());
+        getCommand("tpaccept").setExecutor(new CommandTPAccept());
+        getCommand("tpdeny").setExecutor(new CommandTPDeny());
+        getCommand("tpahere").setExecutor(new CommandTPAHere());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -63,6 +67,10 @@ public final class Main extends JavaPlugin {
         getCommand("sethome").setTabCompleter((new CommandSethome()));
         getCommand("home").setTabCompleter((new CommandHome()));
         getCommand("delhome").setTabCompleter((new CommandDeletehome()));
+        getCommand("tpa").setTabCompleter(new CommandTPA());
+        getCommand("tpaccept").setTabCompleter(new CommandTPAccept());
+        getCommand("tpdeny").setTabCompleter(new CommandTPDeny());
+        getCommand("tpahere").setTabCompleter(new CommandTPAHere());
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new QuitListener(), this);

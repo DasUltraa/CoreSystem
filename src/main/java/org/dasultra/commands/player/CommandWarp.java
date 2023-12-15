@@ -11,6 +11,7 @@ import org.dasultra.api.team.Warp;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.dasultra.api.ServerAPI.reloadWarps;
 import static org.dasultra.api.messages.Messages.getMessage;
 
 public class CommandWarp implements CommandExecutor, TabCompleter {

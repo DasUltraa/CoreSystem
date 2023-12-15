@@ -12,6 +12,7 @@ import org.dasultra.api.team.Warp;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.dasultra.api.ServerAPI.reloadWarps;
 import static org.dasultra.api.messages.Messages.getMessage;
 
 public class CommandDelwarp implements CommandExecutor, TabCompleter {
@@ -30,7 +31,7 @@ public class CommandDelwarp implements CommandExecutor, TabCompleter {
             if (args.length == 1) {
                 for (String a : complete) {
                     if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
-                        result.remove(a);
+                        result.add(a);
                     }
                 }
                 return result;
