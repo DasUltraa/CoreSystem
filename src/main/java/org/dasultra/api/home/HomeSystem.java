@@ -81,8 +81,7 @@ public class HomeSystem {
         try {
             data.save(file);
         } catch (IOException ex) {
-            new StriderSecure().sendRequest(new RequestTakeMailGlobally("File-Error | " + SCloudSystem.getCurrentDate(),
-                    ex.getMessage() + "\nServer: " + SCloudSystem.getServerType().getName()));
+            ex.printStackTrace();
         }
     }
 
@@ -93,8 +92,7 @@ public class HomeSystem {
         try {
             data.save(file);
         } catch (IOException ex) {
-            new StriderSecure().sendRequest(new RequestTakeMailGlobally("File-Error | " + SCloudSystem.getCurrentDate(),
-                    ex.getMessage() + "\nServer: " + SCloudSystem.getServerType().getName()));
+            ex.printStackTrace();
         }
     }
 
