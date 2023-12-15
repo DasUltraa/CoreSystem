@@ -46,6 +46,9 @@ public final class Main extends JavaPlugin {
         getCommand("trash").setExecutor(new CommandTrash());
         getCommand("glow").setExecutor(new CommandGlow());
         getCommand("ping").setExecutor(new CommandPing());
+        getCommand("sethome").setExecutor(new CommandSethome());
+        getCommand("home").setExecutor(new CommandHome());
+        getCommand("delhome").setExecutor((new CommandDeletehome()));
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -56,7 +59,10 @@ public final class Main extends JavaPlugin {
         getCommand("teleport").setTabCompleter(new CommandTeleport());
         getCommand("teleporthere").setTabCompleter(new CommandTeleportHere());
         getCommand("glow").setTabCompleter(new CommandGlow());
-        getCommand("ping").setExecutor(new CommandPing());
+        getCommand("ping").setTabCompleter(new CommandPing());
+        getCommand("sethome").setTabCompleter((new CommandSethome()));
+        getCommand("home").setTabCompleter((new CommandHome()));
+        getCommand("delhome").setTabCompleter((new CommandDeletehome()));
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new QuitListener(), this);

@@ -1,34 +1,34 @@
 package org.dasultra.commands.player;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.dasultra.api.home.HomeSystem;
 
 import java.util.List;
 
 import static org.dasultra.api.messages.Messages.getMessage;
 
-public class CommandPing implements CommandExecutor, TabCompleter {
+public class CommandDeletehome implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player p) {
-            if (args.length == 0) {
-                int ping = getPing(p);
-                p.sendMessage(getMessage("Commands.Ping.Self").replaceAll("%ping%", String.valueOf(ping)));
-            } else if (args.length == 1) {
-                Player t = Bukkit.getPlayer(args[0]);
-                int ping = getPing(t);
-                p.sendMessage(getMessage("Commands.Ping.Other").replaceAll("%ping%", String.valueOf(ping)).replaceAll("%player%", t.getName()));
+            if (args.length == 1) {
+                var user = new HomeSystem(p.getUniqueId());
+                var data = args[0];
+
+                if (!user.existHome(data)) {
+                    p.sendMessage(getMessage("Commands.Delhome.DoesNotExist").replaceAll("%home%", args[0]));
+                }
+
+                user.removeLocation(data);
+                user.removeHome(data);
+                p.sendMessage(getMessage("Commands.Delhome.Success").replaceAll("%home%", args[0]));
             }
         }
         return false;
-    }
-
-    private int getPing(Player p) {
-        return p.getPing();
     }
 
     @Override

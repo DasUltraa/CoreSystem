@@ -56,6 +56,13 @@ public class Messages {
         addMessage("Commands.Ping.Self", "%prefix% &aYour ping is &e%ping%ms&a.");
         addMessage("Commands.Ping.Other", "%prefix% &e%player%'s &aPing is &e%ping%ms&a.");
         addMessage("Commands.Glow.NotFound", "%prefix% &cThe target has not been found!");
+        addMessage("Commands.Sethome.Max", "%prefix% &cYou have set the maximum amount of Homes!");
+        addMessage("Commands.Sethome.Set", "%prefix% &aThe Home &e%home% &ahas been succesfully set.");
+        addMessage("Commands.Sethome.Usage", "%prefix% &cUse /sethome <name>!");
+        addMessage("Commands.Sethome.NoUsername", "%prefix% &cYou are not allowed to use a username as a homename!");
+        addMessage("Commands.Delhome.DoesNotExist", "%prefix% &cThe home &e%home% &cdoes not exist!");
+        addMessage("Commands.Delhome.Success", "%prefix% &aYou succesfully deleted the home &e%home%&a.");
+        addMessage("Commands.Home.Teleport", "%prefix% &aYou have been teleported to the home &e%home%&a.");
     }
 
     public static String getMessage(String path) {

@@ -49,3 +49,8 @@ commands:
   trash:
   glow:
   ping:
+  sethome:
+  home:
+  delhome:
+    aliases:
+      - deletehome
