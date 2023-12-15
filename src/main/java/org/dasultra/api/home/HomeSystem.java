@@ -35,19 +35,19 @@ public class HomeSystem {
     }
 
     public List<String> getHomes() {
-        File file = new File("plugins/ServerAPI/playerdata/" + uuid.toString() + ".yml");
+        File file = new File("plugins/CoreSystem/playerdata/" + uuid.toString() + ".yml");
         YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
         return data.getStringList("homes");
     }
 
     public Location getHome(String name) {
-        File file = new File("plugins/ServerAPI/playerdata/" + uuid.toString() + ".yml");
+        File file = new File("plugins/CoreSystem/playerdata/" + uuid.toString() + ".yml");
         YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
         return data.getLocation("home-" + name);
     }
 
     public void addHome(String home) {
-        File file = new File("plugins/ServerAPI/playerdata/" + uuid.toString() + ".yml");
+        File file = new File("plugins/CoreSystem/playerdata/" + uuid.toString() + ".yml");
         YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
         List<String> list = getHomes();
         if (!list.contains(home)) {
@@ -62,7 +62,7 @@ public class HomeSystem {
     }
 
     public void removeHome(String home) {
-        File file = new File("plugins/ServerAPI/playerdata/" + uuid.toString() + ".yml");
+        File file = new File("plugins/CoreSystem/playerdata/" + uuid.toString() + ".yml");
         YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
         List<String> list = getHomes();
         list.remove(home);
@@ -72,6 +72,32 @@ public class HomeSystem {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public void saveLocation(String name, Location location) {
+        File file = new File("plugins/CoreSystem/playerdata/" + uuid.toString() + ".yml");
+        YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
+        data.set("home-" + name, location);
+        try {
+            data.save(file);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void removeLocation(String name) {
+        File file = new File("plugins/CoreSystem/playerdata/" + uuid.toString() + ".yml");
+        YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
+        data.set("home-" + name, null);
+        try {
+            data.save(file);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public boolean existHome(String name) {
+        return getHomes().contains(name);
     }
 
 }
