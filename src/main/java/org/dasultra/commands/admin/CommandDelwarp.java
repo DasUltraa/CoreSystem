@@ -49,6 +49,7 @@ public class CommandDelwarp implements CommandExecutor, TabCompleter {
                     if (warp.existWarp()) {
                         p.sendMessage(getMessage("Commands.Warp.Delete").replaceAll("%loc%", args[0]));
                         warp.delWarp();
+                        ServerAPI.reloadWarps();
                     } else {
                         p.sendMessage(getMessage("Commands.Warp.DoesNotExist"));
                     }
