@@ -39,6 +39,10 @@ public class CommandHome implements CommandExecutor, TabCompleter {
                         }
                     });
                 }
+            } else {
+                var user = new HomeSystem(p.getUniqueId());
+                var homes = user.getHomes();
+                p.sendMessage(getMessage("Commands.Home.Homes").replaceAll("%homes%", homes.toString()));
             }
         }
         return false;

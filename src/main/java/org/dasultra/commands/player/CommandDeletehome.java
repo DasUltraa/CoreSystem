@@ -21,11 +21,17 @@ public class CommandDeletehome implements CommandExecutor, TabCompleter {
 
                 if (!user.existHome(data)) {
                     p.sendMessage(getMessage("Commands.Delhome.DoesNotExist").replaceAll("%home%", args[0]));
+                } else {
+                    user.removeLocation(data);
+                    user.removeHome(data);
+                    p.sendMessage(getMessage("Commands.Delhome.Success").replaceAll("%home%", args[0]));
                 }
 
-                user.removeLocation(data);
-                user.removeHome(data);
-                p.sendMessage(getMessage("Commands.Delhome.Success").replaceAll("%home%", args[0]));
+
+            } else {
+                var user = new HomeSystem(p.getUniqueId());
+                var homes = user.getHomes();
+                p.sendMessage(getMessage("Commands.Home.Homes").replaceAll("%homes%", homes.toString()));
             }
         }
         return false;

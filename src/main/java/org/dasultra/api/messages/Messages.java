@@ -63,6 +63,7 @@ public class Messages {
         addMessage("Commands.Delhome.DoesNotExist", "%prefix% &cThe home &e%home% &cdoes not exist!");
         addMessage("Commands.Delhome.Success", "%prefix% &aYou succesfully deleted the home &e%home%&a.");
         addMessage("Commands.Home.Teleport", "%prefix% &aYou have been teleported to the home &e%home%&a.");
+        addMessage("Commands.Home.Homes", "%prefix% &aYour available homes: &e%homes%&a.");
     }
 
     public static String getMessage(String path) {
