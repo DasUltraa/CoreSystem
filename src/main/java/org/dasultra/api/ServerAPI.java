@@ -184,7 +184,7 @@ public class ServerAPI {
 
     public void startAPI() {
         FileManager manager = new FileManager("plugins/CoreSystem/Settings.yml");
-        manager.add("ServerName", "&aDeinServer.de");
+        manager.add("ServerName", "&aYourServer.xyz");
         manager.add("Prefix", "&aCore &8»");
         manager.add("ScoreboardPrefix", "&aCore");
         manager.add("NoPerms", " &cYou do not have the perms to use this command!");

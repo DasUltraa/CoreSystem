@@ -16,7 +16,7 @@ public class CommandEco implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player p) {
-            if (p.hasPermission("eco.admin")) {
+            if (p.hasPermission("core.eco")) {
                 if (strings.length == 3) {
                     OfflinePlayer t = Bukkit.getOfflinePlayer(strings[0]);
                     Double money = Double.parseDouble(strings[2]);
