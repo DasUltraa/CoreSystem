@@ -32,7 +32,7 @@ public class CommandEco implements CommandExecutor {
                         p.sendMessage(getMessage("Commands.Eco.UpdateMoney").replaceAll("%player%", t.getName()).replaceAll("%money%", String.valueOf(ServerAPI.renderValueForSave(EconomyAPI.getMoney(p.getUniqueId())))));
                     }
                 } else {
-                    p.sendMessage(getMessage("Commands.EcoBank.Usage"));
+                    p.sendMessage(getMessage("Commands.Eco.Usage"));
                 }
             } else {
                 p.sendMessage(ServerAPI.getPrefix() + ServerAPI.getNoPerms());

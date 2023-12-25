@@ -1,6 +1,7 @@
 package org.dasultra.main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.dasultra.api.Database.DataBaseManager;
 import org.dasultra.api.ServerAPI;
@@ -17,6 +18,10 @@ import java.sql.SQLException;
 public final class Main extends JavaPlugin {
 
     public static Main plugin;
+
+    public static Plugin getPlugin() {
+        return plugin;
+    }
 
     @Override
     public void onEnable() {
@@ -65,6 +70,8 @@ public final class Main extends JavaPlugin {
         getCommand("tpdeny").setExecutor(new CommandTPDeny());
         getCommand("tpahere").setExecutor(new CommandTPAHere());
         getCommand("pay").setExecutor(new CommandPay());
+        getCommand("money").setExecutor(new CommandMoney());
+        getCommand("eco").setExecutor(new CommandEco());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -91,6 +98,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
 
         ServerAPI.initWarp();
+        ScoreboardListener.updateScoreBoard();
     }
 
     @Override

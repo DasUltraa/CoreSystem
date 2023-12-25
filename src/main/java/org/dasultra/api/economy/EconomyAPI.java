@@ -6,6 +6,10 @@ import java.util.UUID;
 
 public class EconomyAPI {
 
+    public static UUID getEconomy(UUID uuid) {
+        return uuid;
+    }
+
     public static Double getMoney(UUID uuid) {
         return DataBaseManager.getMoney(uuid);
     }
