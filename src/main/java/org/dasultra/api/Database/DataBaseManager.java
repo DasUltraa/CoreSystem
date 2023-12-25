@@ -106,5 +106,4 @@ public class DataBaseManager {
         return 0;
     }
 
-
 }

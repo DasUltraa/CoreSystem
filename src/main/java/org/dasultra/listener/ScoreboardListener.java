@@ -2,7 +2,6 @@ package org.dasultra.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
@@ -22,7 +21,6 @@ import java.util.Objects;
 import java.util.UUID;
 
 import static java.sql.Types.TIME;
-import static org.dasultra.api.economy.EconomyAPI.getEconomy;
 
 public class ScoreboardListener implements Listener {
 
@@ -64,17 +62,14 @@ public class ScoreboardListener implements Listener {
 
     public static void updateScoreBoard() {
 
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(getCorePlugin(), () -> {
-            playerScore.keySet().forEach(p -> {
-                final Scoreboard board = playerScore.get(p);
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(getCorePlugin(), () -> playerScore.keySet().forEach(p -> {
+            final Scoreboard board = playerScore.get(p);
 
-                if (board.getTeam("money") != null) {
-                    Objects.requireNonNull(board.getTeam("money")).setSuffix(StringHelper.getColorCode("#ffa600") + getEconomy(p));
-                }
+            if (board.getTeam("money") != null) {
+                Objects.requireNonNull(board.getTeam("money")).setSuffix(StringHelper.getColorCode("#ffa600") + ServerAPI.renderValueForSave(EconomyAPI.getMoney(p)));
+            }
 
-            });
-
-        }, 20 * TIME, 20 * TIME);
+        }), 20 * TIME, 20 * TIME);
     }
 
 }

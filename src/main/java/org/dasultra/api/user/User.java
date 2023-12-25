@@ -3,8 +3,6 @@ package org.dasultra.api.user;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.inventory.ItemStack;
-import org.dasultra.api.ServerAPI;
-import org.dasultra.api.economy.EconomyAPI;
 
 import java.time.LocalDate;
 import java.util.List;
