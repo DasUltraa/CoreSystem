@@ -183,6 +183,20 @@ public class ServerAPI {
 
         Messages.initMessages();
         initMethodes();
+
+        databaseConfig();
+    }
+
+    private void databaseConfig() {
+        FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
+
+        mysql.add("Host", "127.0.0.1");
+        mysql.add("Port", "3306");
+        mysql.add("Username", "user");
+        mysql.add("Password", "password");
+        mysql.add("Database", "database");
+
+        mysql.save();
     }
 
     public void initMethodes() {

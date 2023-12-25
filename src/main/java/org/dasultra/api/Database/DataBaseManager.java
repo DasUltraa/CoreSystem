@@ -21,8 +21,8 @@ public class DataBaseManager {
 
     public static void connect() throws SQLException {
         if (!isConnected()) {
-            connection = DriverManager.getConnection("jdbc:mysql://" +
-                    "" + host + ":" + port + "/" + database + "?autoReconnect=true" +
+            connection = DriverManager.getConnection("jdbc:mysql://"
+                    + host + ":" + port + "/" + database + "?autoReconnect=true" +
                     "&characterEncoding=utf8&useUnicode=true" +
                     "&sessionVariables=storage_engine%3DInnoDB" +
                     "&interactiveClient=true&dontTrackOpenResources=true", username, password);
