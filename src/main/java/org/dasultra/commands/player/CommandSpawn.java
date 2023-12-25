@@ -1,4 +1,4 @@
-package org.dasultra.commands.admin;
+package org.dasultra.commands.player;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
