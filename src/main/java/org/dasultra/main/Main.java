@@ -14,6 +14,8 @@ import org.dasultra.listener.ScoreboardListener;
 
 import java.sql.SQLException;
 
+import static org.dasultra.listener.ScoreboardListener.updateScoreBoard;
+
 public final class Main extends JavaPlugin {
 
     public static Main plugin;
@@ -97,7 +99,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
 
         ServerAPI.initWarp();
-        ScoreboardListener.updateScoreBoard();
+        updateScoreBoard();
     }
 
     @Override

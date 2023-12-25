@@ -48,12 +48,23 @@ public class ScoreboardListener implements Listener {
 
             Team money = board.registerNewTeam("money");
             money.setPrefix("§a");
-            money.setSuffix(StringHelper.getColorCode("#ffa600") + ServerAPI.renderValueForSave(EconomyAPI.getMoney(p.getUniqueId())));
+            money.setSuffix("§8» " + StringHelper.getColorCode("#ffa600") + ServerAPI.renderValueForSave(EconomyAPI.getMoney(p.getUniqueId())) + "$");
             money.addEntry(ChatColor.RED.toString());
 
-            obj.getScore("§r§0").setScore(15);
-            obj.getScore("§8§l> §cMoney").setScore(14);
-            obj.getScore(ChatColor.RED.toString()).setScore(13);
+            Team online = board.registerNewTeam("online");
+            online.setPrefix("§a");
+            online.setSuffix("§8» " + ChatColor.GOLD + String.valueOf(Bukkit.getOnlinePlayers().size()) + "/" + Bukkit.getMaxPlayers());
+            online.addEntry(ChatColor.GOLD.toString());
+
+            obj.getScore("§cOnline").setScore(8);
+            obj.getScore(ChatColor.GOLD.toString()).setScore(7);
+            obj.getScore("§r§1").setScore(6);
+            obj.getScore("§cName").setScore(5);
+            obj.getScore("§8»" + ChatColor.GOLD + p.getName()).setScore(4);
+            obj.getScore("§r§2").setScore(3);
+            obj.getScore("§cMoney").setScore(2);
+            obj.getScore(ChatColor.RED.toString()).setScore(1);
+            obj.getScore("§r§0").setScore(0);
         }
 
         p.setScoreboard(board);
@@ -65,8 +76,13 @@ public class ScoreboardListener implements Listener {
         Bukkit.getScheduler().scheduleSyncRepeatingTask(getCorePlugin(), () -> playerScore.keySet().forEach(p -> {
             final Scoreboard board = playerScore.get(p);
 
+
             if (board.getTeam("money") != null) {
-                Objects.requireNonNull(board.getTeam("money")).setSuffix(StringHelper.getColorCode("#ffa600") + ServerAPI.renderValueForSave(EconomyAPI.getMoney(p)));
+                Objects.requireNonNull(board.getTeam("money")).setSuffix("§8» " + StringHelper.getColorCode("#ffa600") + ServerAPI.renderValueForSave(EconomyAPI.getMoney(p)) + "$");
+            }
+
+            if (board.getTeam("online") != null) {
+                Objects.requireNonNull(board.getTeam("online")).setSuffix("§8» " + ChatColor.GOLD + String.valueOf(Bukkit.getOnlinePlayers().size()) + "/" + Bukkit.getMaxPlayers());
             }
 
         }), 20 * TIME, 20 * TIME);

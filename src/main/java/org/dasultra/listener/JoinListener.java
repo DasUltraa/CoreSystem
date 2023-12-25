@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.dasultra.api.Database.DataBaseManager;
 
 import static org.dasultra.api.messages.Messages.getMessage;
+import static org.dasultra.listener.ScoreboardListener.updateScoreBoard;
 
 public class JoinListener implements Listener {
 
@@ -17,5 +18,7 @@ public class JoinListener implements Listener {
         e.setJoinMessage(getMessage("JoinMessage").replaceAll("%player%", p.getName()));
         ScoreboardListener.setScoreboard(p);
         DataBaseManager.createMoneyPlayer(p.getUniqueId());
+
+        updateScoreBoard();
     }
 }

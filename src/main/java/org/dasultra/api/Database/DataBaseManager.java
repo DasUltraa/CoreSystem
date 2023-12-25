@@ -5,6 +5,8 @@ import org.dasultra.api.ServerAPI;
 import java.sql.*;
 import java.util.UUID;
 
+import static org.dasultra.listener.ScoreboardListener.updateScoreBoard;
+
 public class DataBaseManager {
 
     private final static String host = ServerAPI.getHost();
@@ -81,6 +83,8 @@ public class DataBaseManager {
     }
 
     public static void updateCoins(UUID uuid, double value) {
+
+        updateScoreBoard();
 
         double parse = Double.parseDouble(ServerAPI.renderValueForSave(value).replace(",", "."));
         try {
