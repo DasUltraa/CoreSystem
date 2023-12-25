@@ -8,7 +8,6 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.dasultra.api.ServerAPI;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.dasultra.api.messages.Messages.getMessage;

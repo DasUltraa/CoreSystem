@@ -17,7 +17,7 @@ public class CommandSethome implements CommandExecutor, TabCompleter {
         if (sender instanceof Player p) {
 
             if (args.length == 1) {
-                var user = new HomeSystem (p.getUniqueId());
+                var user = new HomeSystem(p.getUniqueId());
                 var data = args[0];
 
                 if (data.equalsIgnoreCase(p.getName())) {
@@ -35,7 +35,6 @@ public class CommandSethome implements CommandExecutor, TabCompleter {
                     user.saveLocation(data, p.getLocation());
                     p.sendMessage(getMessage("Commands.Sethome.Set").replaceAll("%home%", args[0]));
                 }
-
 
 
             } else {

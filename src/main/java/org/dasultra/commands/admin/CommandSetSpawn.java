@@ -5,8 +5,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.dasultra.api.file.FileManager;
 import org.dasultra.api.ServerAPI;
+import org.dasultra.api.file.FileManager;
 
 import java.util.Objects;
 

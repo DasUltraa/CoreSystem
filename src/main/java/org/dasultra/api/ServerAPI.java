@@ -8,8 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.dasultra.api.file.FileManager;
 import org.dasultra.api.builder.ItemBuilder;
+import org.dasultra.api.file.FileManager;
 import org.dasultra.api.home.HomeSystem;
 import org.dasultra.api.messages.Messages;
 
@@ -100,10 +100,6 @@ public class ServerAPI {
         initWarp();
     }
 
-    public HomeSystem getHomeSystem(UUID uuid){
-        return new HomeSystem(uuid);
-    }
-
     public static void acceptTpa(Player target) {
         if (tpa.containsKey(target)) {
             Player sender = tpa.get(target);
@@ -174,6 +170,18 @@ public class ServerAPI {
         }
     }
 
+    public static void sendClickableMessage(Player p, String message, String clickMessage, String hoverMessage, String command) {
+        TextComponent raw = new TextComponent(message);
+        TextComponent text = new TextComponent(clickMessage);
+        text.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(hoverMessage)));
+        text.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/" + command));
+        p.spigot().sendMessage(raw, text);
+    }
+
+    public HomeSystem getHomeSystem(UUID uuid) {
+        return new HomeSystem(uuid);
+    }
+
     public void startAPI() {
         FileManager manager = new FileManager("plugins/CoreSystem/Settings.yml");
         manager.add("ServerName", "&aDeinServer.de");
@@ -202,14 +210,6 @@ public class ServerAPI {
     public void initMethodes() {
         FileManager manager = new FileManager("plugins/CoreSystem/Methodes.yml");
         manager.add("MessageAPI", true);
-    }
-
-    public static void sendClickableMessage(Player p, String message, String clickMessage, String hoverMessage, String command) {
-        TextComponent raw = new TextComponent(message);
-        TextComponent text = new TextComponent(clickMessage);
-        text.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(hoverMessage)));
-        text.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/" + command));
-        p.spigot().sendMessage(raw, text);
     }
 
 }

@@ -111,6 +111,7 @@ public interface User {
     void countMinute();
 
     void resetMinute();
+
     int getPing();
 
     void takeDailyReward();

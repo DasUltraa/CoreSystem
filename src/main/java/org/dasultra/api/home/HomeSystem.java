@@ -22,7 +22,7 @@ public class HomeSystem {
 
     UUID uuid;
 
-    public HomeSystem(UUID uuid){
+    public HomeSystem(UUID uuid) {
         this.uuid = uuid;
     }
 
