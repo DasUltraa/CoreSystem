@@ -22,18 +22,21 @@ public class CommandSethome implements CommandExecutor, TabCompleter {
 
                 if (data.equalsIgnoreCase(p.getName())) {
                     p.sendMessage(getMessage("Commands.Sethome.NoUsername"));
-                }
+                } else {
+                    if (user.getHomes().size() >= user.getMaxHomes()) {
+                        if (user.getHomes().contains(data)) {
+                            user.saveLocation(data, p.getLocation());
 
-                if (user.getHomes().size() >= user.getMaxHomes()) {
-                    if (user.getHomes().contains(data)) {
-                        user.saveLocation(data, p.getLocation());
 
+                        }
+                        p.sendMessage(getMessage("Commands.Sethome.Max"));
                     }
-                    p.sendMessage(getMessage("Commands.Sethome.Max"));
+                    user.addHome(data);
+                    user.saveLocation(data, p.getLocation());
+                    p.sendMessage(getMessage("Commands.Sethome.Set").replaceAll("%home%", args[0]));
                 }
-                user.addHome(data);
-                user.saveLocation(data, p.getLocation());
-                p.sendMessage(getMessage("Commands.Sethome.Set").replaceAll("%home%", args[0]));
+
+
 
             } else {
                 p.sendMessage(getMessage("Commands.Sethome.Usage"));

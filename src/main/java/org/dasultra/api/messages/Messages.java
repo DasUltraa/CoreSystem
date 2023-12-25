@@ -75,6 +75,15 @@ public class Messages {
         addMessage("Commands.Tpahere.Usage", "%prefix% &cUse /tpahere <player>!");
         addMessage("Commands.Tpahere.Sent.Target", "%prefix% &e%player% &awants you to teleport to him!");
         addMessage("Commands.Tpahere.Sent.Player", "%prefix% &aTeleport request sent!");
+        addMessage("Commands.Eco.UpdateMoney", "%prefix% &e%player% &7got now §c%money%$");
+        addMessage("Commands.Eco.Usage", "%prefix% &cUse: /eco (Player) (set/add/remove) (Money)");
+        addMessage("Commands.Money.Player", "%prefix% &You got &c%money%€&7.");
+        addMessage("Commands.Money.Target", "%prefix% &7The Player &e%player% &7got &c%money%$&7.");
+        addMessage("Commands.Pay.SuccessPlayer", "%prefix% &7You gave &e%player% &a%money%$ &7.");
+        addMessage("Commands.Pay.SuccessTarget", "%prefix% &7You recieved &a%money%€ &7from &e%player% &7.");
+        addMessage("Commands.Pay.Usage", "%prefix% &cUse: /pay (Player) (Money)");
+        addMessage("Commands.Pay.NotEnoughMoney", "%prefix% &cYou do not have enough money!");
+        addMessage("Commands.Pay.SelfPay", "%prefix% &cYou cannot pay yourself!");
     }
 
     public static String getMessage(String path) {

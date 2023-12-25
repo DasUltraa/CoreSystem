@@ -1,7 +1,9 @@
 package org.dasultra.main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.dasultra.api.Database.DataBaseManager;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.commands.admin.*;
 import org.dasultra.commands.admin.CommandSpawn;
@@ -9,6 +11,9 @@ import org.dasultra.commands.player.*;
 import org.dasultra.listener.ChatBlocker;
 import org.dasultra.listener.JoinListener;
 import org.dasultra.listener.QuitListener;
+import org.dasultra.listener.ScoreboardListener;
+
+import java.sql.SQLException;
 
 public final class Main extends JavaPlugin {
 
@@ -20,6 +25,13 @@ public final class Main extends JavaPlugin {
         plugin = this;
 
         new ServerAPI().startAPI();
+        try {
+            DataBaseManager.connect();
+            Bukkit.getConsoleSender().sendMessage(ServerAPI.getPrefix() + " §aMySQL connected Successfully!");
+        } catch (SQLException e) {
+            Bukkit.getConsoleSender().sendMessage(ServerAPI.getPrefix() + " §cError, MySQL couldn't connect!");
+            throw new RuntimeException(e);
+        }
 
         System.out.print("CoreSystem is running");
 
@@ -53,6 +65,7 @@ public final class Main extends JavaPlugin {
         getCommand("tpaccept").setExecutor(new CommandTPAccept());
         getCommand("tpdeny").setExecutor(new CommandTPDeny());
         getCommand("tpahere").setExecutor(new CommandTPAHere());
+        getCommand("pay").setExecutor(new CommandPay());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -72,16 +85,25 @@ public final class Main extends JavaPlugin {
         getCommand("tpdeny").setTabCompleter(new CommandTPDeny());
         getCommand("tpahere").setTabCompleter(new CommandTPAHere());
 
+
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new QuitListener(), this);
         getServer().getPluginManager().registerEvents(new ChatBlocker(), this);
+        getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
 
         ServerAPI.initWarp();
     }
 
     @Override
     public void onDisable() {
+        plugin = null;
         System.out.print("CoreSystem is shutting down");
+
+        try {
+            DataBaseManager.disconnect();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

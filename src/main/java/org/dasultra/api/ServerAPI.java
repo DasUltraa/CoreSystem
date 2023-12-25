@@ -26,9 +26,35 @@ import static org.dasultra.api.messages.Messages.getMessage;
 public class ServerAPI {
 
     protected static final LinkedList<String> warps = new LinkedList<>();
-    private static final LinkedList<String> allow = new LinkedList<>();
     protected static final HashMap<Player, Player> tpa = new HashMap<>();
     protected static final HashMap<Player, Player> tpaHere = new HashMap<>();
+
+    private static final LinkedList<String> allow = new LinkedList<>();
+
+    public static String getHost() {
+        FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
+        return mysql.getString("Host");
+    }
+
+    public static String getPort() {
+        FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
+        return mysql.getString("Port");
+    }
+
+    public static String getDatabase() {
+        FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
+        return mysql.getString("Database");
+    }
+
+    public static String getUsername() {
+        FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
+        return mysql.getString("Username");
+    }
+
+    public static String getPassword() {
+        FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
+        return mysql.getString("Password");
+    }
 
     public static boolean getMethodes(String meth) {
         FileManager manager = new FileManager("plugins/CoreSystem/Methodes.yml");
@@ -47,6 +73,11 @@ public class ServerAPI {
     public static String getNoPerms() {
         FileManager manager = new FileManager("plugins/CoreSystem/Settings.yml");
         return manager.getString("NoPerms").replaceAll("&", "§");
+    }
+
+    public static String getServerName() {
+        FileManager manager = new FileManager("plugins/CoreSystem/Settings.yml");
+        return manager.getString("ServerName").replaceAll("&", "§");
     }
 
     public static String renderValueForSave(double v) {
@@ -145,9 +176,10 @@ public class ServerAPI {
 
     public void startAPI() {
         FileManager manager = new FileManager("plugins/CoreSystem/Settings.yml");
+        manager.add("ServerName", "&aDeinServer.de");
         manager.add("Prefix", "&aCore &8»");
         manager.add("ScoreboardPrefix", "&aCore");
-        manager.add("NoPerms", " &cDazu hast du keine Rechte!");
+        manager.add("NoPerms", " &cYou do not have the perms to use this command!");
 
         Messages.initMessages();
         initMethodes();
