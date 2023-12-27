@@ -73,6 +73,9 @@ public final class Main extends JavaPlugin {
         getCommand("pay").setExecutor(new CommandPay());
         getCommand("money").setExecutor(new CommandMoney());
         getCommand("eco").setExecutor(new CommandEco());
+        getCommand("sun").setExecutor(new CommandSun());
+        getCommand("rain").setExecutor(new CommandRain());
+        getCommand("thunder").setExecutor(new CommandThunder());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
