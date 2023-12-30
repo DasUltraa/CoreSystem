@@ -66,3 +66,9 @@ commands:
   sun:
   rain:
   thunder:
+  vanish:
+    aliases:
+      - v
+  broadcast:
+    aliases:
+      - bc

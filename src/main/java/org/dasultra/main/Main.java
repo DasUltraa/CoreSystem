@@ -7,10 +7,7 @@ import org.dasultra.api.Database.DataBaseManager;
 import org.dasultra.api.ServerAPI;
 import org.dasultra.commands.admin.*;
 import org.dasultra.commands.player.*;
-import org.dasultra.listener.ChatBlocker;
-import org.dasultra.listener.JoinListener;
-import org.dasultra.listener.QuitListener;
-import org.dasultra.listener.ScoreboardListener;
+import org.dasultra.listener.*;
 
 import java.sql.SQLException;
 
@@ -76,6 +73,8 @@ public final class Main extends JavaPlugin {
         getCommand("sun").setExecutor(new CommandSun());
         getCommand("rain").setExecutor(new CommandRain());
         getCommand("thunder").setExecutor(new CommandThunder());
+        getCommand("vanish").setExecutor(new CommandVanish());
+        getCommand("broadcast").setExecutor(new CommandBroadcast());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -94,15 +93,17 @@ public final class Main extends JavaPlugin {
         getCommand("tpaccept").setTabCompleter(new CommandTPAccept());
         getCommand("tpdeny").setTabCompleter(new CommandTPDeny());
         getCommand("tpahere").setTabCompleter(new CommandTPAHere());
+        getCommand("vanish").setTabCompleter(new CommandVanish());
 
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new QuitListener(), this);
         getServer().getPluginManager().registerEvents(new ChatBlocker(), this);
         getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
+        getServer().getPluginManager().registerEvents(new RestartListener(), this);
+        getServer().getPluginManager().registerEvents(new AntiDasUltraKill(), this);
 
         ServerAPI.initWarp();
-        updateScoreBoard();
     }
 
     @Override

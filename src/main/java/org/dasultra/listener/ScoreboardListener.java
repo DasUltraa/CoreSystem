@@ -56,6 +56,7 @@ public class ScoreboardListener implements Listener {
             online.setSuffix("§8» " + ChatColor.GOLD + String.valueOf(Bukkit.getOnlinePlayers().size()) + "/" + Bukkit.getMaxPlayers());
             online.addEntry(ChatColor.GOLD.toString());
 
+            obj.getScore("§r§5").setScore(9);
             obj.getScore("§cOnline").setScore(8);
             obj.getScore(ChatColor.GOLD.toString()).setScore(7);
             obj.getScore("§r§1").setScore(6);

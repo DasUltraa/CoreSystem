@@ -10,6 +10,7 @@ import org.dasultra.api.ServerAPI;
 import org.dasultra.api.economy.EconomyAPI;
 
 import static org.dasultra.api.messages.Messages.getMessage;
+import static org.dasultra.listener.ScoreboardListener.updateScoreBoard;
 
 public class CommandEco implements CommandExecutor {
 
@@ -22,12 +23,15 @@ public class CommandEco implements CommandExecutor {
                     Double money = Double.parseDouble(strings[2]);
 
                     if (strings[1].equalsIgnoreCase("add")) {
+                        updateScoreBoard();
                         EconomyAPI.addMoney(t.getUniqueId(), money);
                         p.sendMessage(getMessage("Commands.Eco.UpdateMoney").replaceAll("%player%", t.getName()).replaceAll("%money%", String.valueOf(ServerAPI.renderValueForSave(EconomyAPI.getMoney(p.getUniqueId())))));
                     } else if (strings[1].equalsIgnoreCase("remove")) {
+                        updateScoreBoard();
                         EconomyAPI.removeMoney(t.getUniqueId(), money);
                         p.sendMessage(getMessage("Commands.Eco.UpdateMoney").replaceAll("%player%", t.getName()).replaceAll("%money%", String.valueOf(ServerAPI.renderValueForSave(EconomyAPI.getMoney(p.getUniqueId())))));
                     } else if (strings[1].equalsIgnoreCase("set")) {
+                        updateScoreBoard();
                         EconomyAPI.setMoney(t.getUniqueId(), money);
                         p.sendMessage(getMessage("Commands.Eco.UpdateMoney").replaceAll("%player%", t.getName()).replaceAll("%money%", String.valueOf(ServerAPI.renderValueForSave(EconomyAPI.getMoney(p.getUniqueId())))));
                     }

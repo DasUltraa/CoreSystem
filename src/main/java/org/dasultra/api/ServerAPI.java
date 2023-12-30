@@ -30,6 +30,7 @@ public class ServerAPI {
     protected static final HashMap<Player, Player> tpaHere = new HashMap<>();
 
     private static final LinkedList<String> allow = new LinkedList<>();
+    public static final LinkedList<Player> vanish = new LinkedList<>();
 
     public static String getHost() {
         FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");
@@ -186,7 +187,6 @@ public class ServerAPI {
         FileManager manager = new FileManager("plugins/CoreSystem/Settings.yml");
         manager.add("ServerName", "&aYourServer.xyz");
         manager.add("Prefix", "&aCore &8»");
-        manager.add("ScoreboardPrefix", "&aCore");
         manager.add("NoPerms", " &cYou do not have the perms to use this command!");
 
         Messages.initMessages();

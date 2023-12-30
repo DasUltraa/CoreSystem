@@ -84,14 +84,13 @@ public class DataBaseManager {
 
     public static void updateCoins(UUID uuid, double value) {
 
-        updateScoreBoard();
-
         double parse = Double.parseDouble(ServerAPI.renderValueForSave(value).replace(",", "."));
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE economy SET MONEY=? WHERE UUID=?");
             statement.setDouble(1, parse);
             statement.setString(2, uuid.toString());
             statement.executeUpdate();
+            updateScoreBoard();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

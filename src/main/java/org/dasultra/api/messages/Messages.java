@@ -30,7 +30,10 @@ public class Messages {
         addMessage("Commands.Feed.Other", "%prefix% &aYou feeded &e%player%");
         addMessage("Commands.Heal.Self", "%prefix% &aYou got healed");
         addMessage("Commands.Heal.Other", "%prefix% &aYou healed &e%player%");
-        addMessage("Commands.Fly", "%prefix% &7Your flight mode is now ");
+        addMessage("Commands.Fly", "%prefix% &7Your flight mode is now");
+        addMessage("Commands.Vanish.On", "%prefix% &aYour vanish is now &eenabled&a.");
+        addMessage("Commands.Vanish.Off", "%prefix% &cYour vanish is now &edisabled&c.");
+        addMessage("Commands.Vanish.Usage", "%prefix% &cUse /vanish <player>!");
         addMessage("Commands.Invsee", "%prefix% &aYou opened &e%player%'s &ainventory");
         addMessage("Commands.Enderchest.Self", "%prefix% &aYou opened your enderchest");
         addMessage("Commands.Enderchest.Other", "%prefix% &aYou opened &e%player%'s &aenderchest");
@@ -87,6 +90,8 @@ public class Messages {
         addMessage("Commands.Sun", "%prefix% &aThe &esun &ais shining!");
         addMessage("Commands.Rain", "%prefix% &aIt is now &eraining&a!");
         addMessage("Commands.Thunder", "%prefix% &aThe &ethunder &ais coming up!");
+        addMessage("Commands.Restart", "%prefix% &cThe Server is restarting in %time% seconds!");
+        addMessage("Commands.Broadcast.Usage", "%prefix% &cUse /broadcast <message>");
     }
 
     public static String getMessage(String path) {

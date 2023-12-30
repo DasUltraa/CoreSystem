@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.dasultra.api.economy.EconomyAPI;
 
 import static org.dasultra.api.messages.Messages.getMessage;
+import static org.dasultra.listener.ScoreboardListener.updateScoreBoard;
 
 public class CommandPay implements CommandExecutor {
 
@@ -20,6 +21,7 @@ public class CommandPay implements CommandExecutor {
 
                 if (!strings[0].equalsIgnoreCase(p.getName())) {
                     if (EconomyAPI.getMoney(p.getUniqueId()) >= money) {
+                        updateScoreBoard();
                         EconomyAPI.removeMoney(p.getUniqueId(), money);
                         EconomyAPI.addMoney(t.getUniqueId(), money);
                         p.sendMessage(getMessage("Commands.Pay.SuccessPlayer").replaceAll("%player%", t.getName()).replaceAll("%money%", String.valueOf(strings[1])));
