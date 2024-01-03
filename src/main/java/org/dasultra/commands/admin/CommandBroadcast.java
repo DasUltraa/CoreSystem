@@ -17,7 +17,7 @@ public class CommandBroadcast implements CommandExecutor {
                 if (args.length > 0) {
                     String bc = "";
                     for (int i = 0; i < args.length; i++)
-                        bc = String.valueOf(bc) + args[i] + " ";
+                        bc = bc + args[i] + " ";
                     bc = bc.replace("\\n", "\n");
                     Bukkit.broadcastMessage("§8------------------------");
                     Bukkit.broadcastMessage("§r§2");
@@ -36,7 +36,7 @@ public class CommandBroadcast implements CommandExecutor {
         return false;
     }
 
-    private void playSoundToAllPlayers (Sound sound){
+    private void playSoundToAllPlayers(Sound sound) {
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             onlinePlayer.playSound(onlinePlayer.getLocation(), sound, 1.0f, 1.0f);
         }

@@ -53,7 +53,7 @@ public class ScoreboardListener implements Listener {
 
             Team online = board.registerNewTeam("online");
             online.setPrefix("§a");
-            online.setSuffix("§8» " + ChatColor.GOLD + String.valueOf(Bukkit.getOnlinePlayers().size()) + "/" + Bukkit.getMaxPlayers());
+            online.setSuffix("§8» " + ChatColor.GOLD + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
             online.addEntry(ChatColor.GOLD.toString());
 
             obj.getScore("§r§5").setScore(9);
@@ -83,7 +83,7 @@ public class ScoreboardListener implements Listener {
             }
 
             if (board.getTeam("online") != null) {
-                Objects.requireNonNull(board.getTeam("online")).setSuffix("§8» " + ChatColor.GOLD + String.valueOf(Bukkit.getOnlinePlayers().size()) + "/" + Bukkit.getMaxPlayers());
+                Objects.requireNonNull(board.getTeam("online")).setSuffix("§8» " + ChatColor.GOLD + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers());
             }
 
         }), 20 * TIME, 20 * TIME);

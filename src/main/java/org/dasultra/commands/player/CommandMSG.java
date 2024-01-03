@@ -6,7 +6,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.dasultra.api.ServerAPI;
 
 import java.util.List;
 
@@ -21,8 +20,8 @@ public class CommandMSG implements CommandExecutor, TabCompleter {
                 if (t != null) {
                     String msg = "";
                     for (int i = 1; i < args.length; i++)
-                        msg = String.valueOf(msg) + args[i] + " ";
-                    if(args[0] == p.getName()) {
+                        msg = msg + args[i] + " ";
+                    if (args[0] == p.getName()) {
                         p.sendMessage("Commands.Message.CannotMessageSelf");
                     } else {
                         p.sendMessage(getMessage("Commands.Message.Player").replaceAll("%target%", t.getName()).replaceAll("%message%", msg));

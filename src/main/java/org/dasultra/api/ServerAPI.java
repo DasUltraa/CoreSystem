@@ -25,12 +25,11 @@ import static org.dasultra.api.messages.Messages.getMessage;
 
 public class ServerAPI {
 
+    public static final LinkedList<Player> vanish = new LinkedList<>();
     protected static final LinkedList<String> warps = new LinkedList<>();
     protected static final HashMap<Player, Player> tpa = new HashMap<>();
     protected static final HashMap<Player, Player> tpaHere = new HashMap<>();
-
     private static final LinkedList<String> allow = new LinkedList<>();
-    public static final LinkedList<Player> vanish = new LinkedList<>();
 
     public static String getHost() {
         FileManager mysql = new FileManager("plugins/CoreSystem/MySQL.yml");

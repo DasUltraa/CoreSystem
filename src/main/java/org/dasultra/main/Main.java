@@ -11,8 +11,6 @@ import org.dasultra.listener.*;
 
 import java.sql.SQLException;
 
-import static org.dasultra.listener.ScoreboardListener.updateScoreBoard;
-
 public final class Main extends JavaPlugin {
 
     public static Main plugin;
