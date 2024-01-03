@@ -39,13 +39,11 @@ public class RestartListener implements Listener {
                             }
                         }
 
+                        restartTime--;
 
-
-                        if (restartTime < 4) {
+                        if (restartTime < 3) {
                             playSoundToAllPlayers(Sound.BLOCK_NOTE_BLOCK_HARP);
                         }
-
-                        restartTime--;
 
 
 

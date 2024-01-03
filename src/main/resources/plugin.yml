@@ -72,3 +72,6 @@ commands:
   broadcast:
     aliases:
       - bc
+  message:
+    aliases:
+      - msg

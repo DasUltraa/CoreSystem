@@ -75,6 +75,7 @@ public final class Main extends JavaPlugin {
         getCommand("thunder").setExecutor(new CommandThunder());
         getCommand("vanish").setExecutor(new CommandVanish());
         getCommand("broadcast").setExecutor(new CommandBroadcast());
+        getCommand("message").setExecutor(new CommandMSG());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -94,6 +95,7 @@ public final class Main extends JavaPlugin {
         getCommand("tpdeny").setTabCompleter(new CommandTPDeny());
         getCommand("tpahere").setTabCompleter(new CommandTPAHere());
         getCommand("vanish").setTabCompleter(new CommandVanish());
+        getCommand("message").setTabCompleter(new CommandMSG());
 
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);

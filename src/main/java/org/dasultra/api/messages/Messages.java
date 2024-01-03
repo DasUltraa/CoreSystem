@@ -92,6 +92,10 @@ public class Messages {
         addMessage("Commands.Thunder", "%prefix% &aThe &ethunder &ais coming up!");
         addMessage("Commands.Restart", "%prefix% &cThe Server is restarting in %time% seconds!");
         addMessage("Commands.Broadcast.Usage", "%prefix% &cUse /broadcast <message>");
+        addMessage("Commands.Message.Player", "%prefix% &8[&aYou &7-> &a%target%&8] &7%message%");
+        addMessage("Commands.Message.Target", "%prefix% &8[&a%player% &7-> &aYou&8] &7%message%");
+        addMessage("Commands.Message.Usage", "%prefix% &cUse /msg <player> <message>");
+        addMessage("Commands.Message.CannotMessageSelf", "%prefix% &cYou cant send yourself a message");
     }
 
     public static String getMessage(String path) {
