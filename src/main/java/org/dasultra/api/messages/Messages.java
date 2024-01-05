@@ -21,6 +21,7 @@ public class Messages {
 
         addMessage("JoinMessage", "&8[&a+&8] &7%player%");
         addMessage("QuitMessage", "&8[&c-&8] &7%player%");
+        addMessage("ChatBlocker", "%prefix% &cDo not curse!");
         addMessage("Commands.Gamemode.Survival", "%prefix% &aYou have set your Gamemode to &eSurvival&8.");
         addMessage("Commands.Gamemode.Creative", "%prefix% &aYou have set your Gamemode to &eCreative&8.");
         addMessage("Commands.Gamemode.Spectator", "%prefix% &aYou have set your Gamemode to &eSpectator&8.");
@@ -96,6 +97,7 @@ public class Messages {
         addMessage("Commands.Message.Target", "%prefix% &8[&a%player% &7-> &aYou&8] &7%message%");
         addMessage("Commands.Message.Usage", "%prefix% &cUse /msg <player> <message>");
         addMessage("Commands.Message.CannotMessageSelf", "%prefix% &cYou cant send yourself a message");
+
     }
 
     public static String getMessage(String path) {
