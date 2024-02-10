@@ -74,6 +74,11 @@ public final class Main extends JavaPlugin {
         getCommand("vanish").setExecutor(new CommandVanish());
         getCommand("broadcast").setExecutor(new CommandBroadcast());
         getCommand("message").setExecutor(new CommandMSG());
+        getCommand("repair").setExecutor(new CommandRepair());
+        getCommand("kick").setExecutor(new CommandKick());
+        getCommand("lore").setExecutor(new CommandLore());
+        getCommand("day").setExecutor(new CommandDay());
+        getCommand("night").setExecutor(new CommandNight());
 
         getCommand("warp").setTabCompleter(new CommandWarp());
         getCommand("setwarp").setTabCompleter(new CommandSetwarp());
@@ -94,6 +99,9 @@ public final class Main extends JavaPlugin {
         getCommand("tpahere").setTabCompleter(new CommandTPAHere());
         getCommand("vanish").setTabCompleter(new CommandVanish());
         getCommand("message").setTabCompleter(new CommandMSG());
+        getCommand("repair").setTabCompleter(new CommandRepair());
+        getCommand("kick").setTabCompleter(new CommandKick());
+        getCommand("lore").setTabCompleter(new CommandLore());
 
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);

@@ -50,7 +50,8 @@ public class Messages {
         addMessage("Commands.Skull.Usage", "%prefix% &cUse /head <player>!");
         addMessage("Commands.Clear.Clear", "%prefix% &aYou cleared &e%player%'s &ainventory");
         addMessage("Commands.Clear.Usage", "%prefix% &cUse /clear <player>!");
-        addMessage("Commands.Rename", "%prefix% &aYou renamed your item!");
+        addMessage("Commands.Rename.Success", "%prefix% &aYou renamed your item to &e%name%&a!");
+        addMessage("Commands.Rename.Usage", "%prefix% &cUse /rename <name>");
         addMessage("Commands.Craft", "%prefix% &aYou opened your workbench");
         addMessage("Commands.Teleport.Self", "%prefix% &aYou got teleported to &e%player%&a.");
         addMessage("Commands.Teleport.Other", "%prefix% &aYou teleported &e%player1%&a to &e%player2%&a.");
@@ -97,6 +98,19 @@ public class Messages {
         addMessage("Commands.Message.Target", "%prefix% &8[&a%player% &7-> &aYou&8] &7%message%");
         addMessage("Commands.Message.Usage", "%prefix% &cUse /msg <player> <message>");
         addMessage("Commands.Message.CannotMessageSelf", "%prefix% &cYou cant send yourself a message");
+        addMessage("Commands.Repair.Repaired", "%prefix% &aYou've repaired your item!");
+        addMessage("Commands.Repair.Other", "%prefix% &aYou've repaired &e%player%'s &aitem!");
+        addMessage("Commands.Repair.Air", "%prefix% &cYou can't repair air!");
+        addMessage("Commands.Kick.Usage", "%prefix% &cUse /kick <Player> <Reason>");
+        addMessage("Commands.Kick.PlayerNotFound", "%prefix% &cThe target has not been found!");
+        addMessage("Commands.Kick.Success", "%prefix% &aYou have successfully kicked &e%player% &cdue to &e%reason%&c.");
+        addMessage("Commands.Kick.Target", "%prefix% &cYou have been kicked from &e%server% &cdue to");
+        addMessage("Commands.Ban.Success", "%prefix% &aYou have successfully banned &e%player% &cdue to &e%reason%&c.");
+        addMessage("Commands.Lore.Success", "%prefix% &aYou have successfully set the lore to &e%lore%&a.");
+        addMessage("Commands.Lore.Usage", "%prefix% &cUse /lore <lore>");
+        addMessage("Commands.Day", "%prefix% &aYou have set the time to &eDay&8.");
+        addMessage("Commands.Night", "%prefix% &aYou have set the time to &eNight&8.");
+
 
     }
 

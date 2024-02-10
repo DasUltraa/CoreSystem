@@ -23,6 +23,7 @@ public class ChatBlocker implements Listener {
 
             blocked_words.add("nigga");
             blocked_words.add("niga");
+            blocked_words.add("nega");
             blocked_words.add("fuck");
             blocked_words.add("bitch");
             blocked_words.add("hoe");

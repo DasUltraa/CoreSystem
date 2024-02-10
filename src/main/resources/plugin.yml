@@ -75,3 +75,8 @@ commands:
   message:
     aliases:
       - msg
+  repair:
+  kick:
+  lore:
+  day:
+  night:
