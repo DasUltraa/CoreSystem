@@ -18,6 +18,10 @@ public class CommandHome implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(@Nonnull CommandSender commandSender, @Nonnull Command command, @Nonnull String s, @Nonnull String[] strings) {
+        if (commandSender instanceof Player p) {
+            var user = new HomeSystem(p.getUniqueId());
+            return user.getHomes();
+        }
         return new ArrayList<>();
     }
 

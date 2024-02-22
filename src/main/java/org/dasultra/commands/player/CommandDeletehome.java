@@ -39,6 +39,10 @@ public class CommandDeletehome implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player p) {
+            var user = new HomeSystem(p.getUniqueId());
+            return user.getHomes();
+        }
         return null;
     }
 }

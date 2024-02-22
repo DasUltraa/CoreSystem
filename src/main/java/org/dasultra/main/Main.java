@@ -102,6 +102,15 @@ public final class Main extends JavaPlugin {
         getCommand("repair").setTabCompleter(new CommandRepair());
         getCommand("kick").setTabCompleter(new CommandKick());
         getCommand("lore").setTabCompleter(new CommandLore());
+        getCommand("eco").setTabCompleter(new CommandEco());
+        getCommand("kick").setTabCompleter(new CommandKick());
+        getCommand("time").setTabCompleter(new CommandTime());
+        getCommand("deletehome").setTabCompleter(new CommandDeletehome());
+        getCommand("pay").setTabCompleter(new CommandPay());
+        getCommand("money").setTabCompleter(new CommandMoney());
+        getCommand("feed").setTabCompleter(new CommandFeed());
+        getCommand("heal").setTabCompleter(new CommandHeal());
+        getCommand("home").setTabCompleter(new CommandHome());
 
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);

@@ -8,6 +8,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.dasultra.api.ServerAPI;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.dasultra.api.messages.Messages.getMessage;
@@ -41,6 +42,14 @@ public class CommandKick implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        return null;
+        List <String> list = new ArrayList<>();
+        if (args.length == 1) {
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                list.add(player.getName());
+            }
+        } else if (args.length == 2) {
+            list.add("Reason");
+        }
+        return list;
     }
 }
